@@ -190,7 +190,7 @@ def encode(plaintext):
     ciphertext = ciphertext + encryptedLetter
   
   return ciphertext# Manual settings input by user
-plaintext = input("enter body of email\n")
+plaintext = input("Enter body of email\n")
 ciphertext = encode(plaintext)
 message = ciphertext
 port = 465  # For SSL
@@ -205,6 +205,7 @@ try:
     server.sendmail(FROM, TO, message)
     print("email sent successfully")
     server.quit()
+# Error Handling. See Readme for further explanation
 except SMTPAuthenticationError:
     print("AUTHENTICATION ERROR: Possible causes: \n Incorrect username/password \n Security settings prohibit access. (example: make sure <less secure app access> is enabled for gmail users)")
 except SMTPConnectError:
